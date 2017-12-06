@@ -1,0 +1,9 @@
+c:\users\sa\documents\visual studio 2015\Projects\Project\BAL\bin\Debug\BAL.dll
+c:\users\sa\documents\visual studio 2015\Projects\Project\BAL\bin\Debug\BAL.pdb
+c:\users\sa\documents\visual studio 2015\Projects\Project\BAL\bin\Debug\BO.dll
+c:\users\sa\documents\visual studio 2015\Projects\Project\BAL\bin\Debug\DAL.dll
+c:\users\sa\documents\visual studio 2015\Projects\Project\BAL\bin\Debug\BO.pdb
+c:\users\sa\documents\visual studio 2015\Projects\Project\BAL\bin\Debug\DAL.pdb
+c:\users\sa\documents\visual studio 2015\Projects\Project\BAL\obj\Debug\BAL.csprojResolveAssemblyReference.cache
+c:\users\sa\documents\visual studio 2015\Projects\Project\BAL\obj\Debug\BAL.dll
+c:\users\sa\documents\visual studio 2015\Projects\Project\BAL\obj\Debug\BAL.pdb

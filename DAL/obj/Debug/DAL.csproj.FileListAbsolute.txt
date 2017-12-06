@@ -1,0 +1,8 @@
+c:\users\sa\documents\visual studio 2015\Projects\Project\DAL\bin\Debug\DAL.dll.config
+c:\users\sa\documents\visual studio 2015\Projects\Project\DAL\bin\Debug\DAL.dll
+c:\users\sa\documents\visual studio 2015\Projects\Project\DAL\bin\Debug\DAL.pdb
+c:\users\sa\documents\visual studio 2015\Projects\Project\DAL\bin\Debug\BO.dll
+c:\users\sa\documents\visual studio 2015\Projects\Project\DAL\bin\Debug\BO.pdb
+c:\users\sa\documents\visual studio 2015\Projects\Project\DAL\obj\Debug\DAL.dll
+c:\users\sa\documents\visual studio 2015\Projects\Project\DAL\obj\Debug\DAL.pdb
+C:\Users\SA\Documents\Visual Studio 2015\Projects\Project\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache

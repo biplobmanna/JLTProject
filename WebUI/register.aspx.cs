@@ -51,6 +51,8 @@ namespace WebUI
 
             JobSeekerBAL jobSeekerBal = new JobSeekerBAL();
             jobSeekerBal.SaveJobSeeker(jobSeeker, credential);
+
+            //TO-DO: Check for the validity of username from the Credentials DB
         }
 
         protected void DropDownListCategory_SelectedIndexChanged(object sender, EventArgs e)
@@ -83,6 +85,7 @@ namespace WebUI
 
             CompanyBAL companyBal = new CompanyBAL();
             companyBal.SaveCompany(company, credential);
+            //TO-DO: Check for the validity of username from the Credentials DB
         }
     }
 }

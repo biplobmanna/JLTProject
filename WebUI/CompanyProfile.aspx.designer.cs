@@ -10,7 +10,7 @@
 namespace WebUI {
     
     
-    public partial class login {
+    public partial class CompanyProfile {
         
         /// <summary>
         /// form1 control.
@@ -22,57 +22,66 @@ namespace WebUI {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// TextBoxUsername control.
+        /// LabelCompanyId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxUsername;
+        protected global::System.Web.UI.WebControls.Label LabelCompanyId;
         
         /// <summary>
-        /// RequiredFieldValidatorUsername control.
+        /// LabelCompanyName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorUsername;
+        protected global::System.Web.UI.WebControls.Label LabelCompanyName;
         
         /// <summary>
-        /// TextBoxPassword control.
+        /// LabelAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxPassword;
+        protected global::System.Web.UI.WebControls.Label LabelAddress;
         
         /// <summary>
-        /// RequiredFieldValidatorPassword control.
+        /// LabelCity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorPassword;
+        protected global::System.Web.UI.WebControls.Label LabelCity;
         
         /// <summary>
-        /// ButtonSubmit control.
+        /// LabelContactPersonName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonSubmit;
+        protected global::System.Web.UI.WebControls.Label LabelContactPersonName;
         
         /// <summary>
-        /// LabelLoginMessage control.
+        /// LabelContactPersonEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelLoginMessage;
+        protected global::System.Web.UI.WebControls.Label LabelContactPersonEmail;
+        
+        /// <summary>
+        /// LabelContactPersonPhone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelContactPersonPhone;
     }
 }

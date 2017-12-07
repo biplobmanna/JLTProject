@@ -51,5 +51,31 @@ namespace DAL
             }
             return numberOfRowsAdded;
         }
+
+        public Company GetCompanyDetails(int companyId)
+        {
+            var companyDetails = new Company();
+            var commandText = "GetCompanyDetails " + companyId;
+            var adapter = new SqlDataAdapter(commandText, _connection);
+            var table = new DataTable();
+            try
+            {
+                adapter.Fill(table);
+            }
+            catch (Exception e)
+            {
+            }
+            if (table.Rows.Count != 1) return null;
+            var row = table.Rows[0].ItemArray;
+            companyDetails.CompanyId = Convert.ToInt32(row[0]);
+            companyDetails.CompanyName = row[1].ToString();
+            companyDetails.Address = row[2].ToString();
+            companyDetails.CityId = Convert.ToInt32(row[3]);
+            companyDetails.ContactPersonName = row[4].ToString();
+            companyDetails.ContactPersonEmail = row[5].ToString();
+            companyDetails.ContactPersonPhone = row[6].ToString();
+
+            return companyDetails;
+        }
     }
 }

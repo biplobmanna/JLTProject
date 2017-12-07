@@ -18,5 +18,7 @@ namespace BAL
         }
 
         public DataTable GetCities()=>_cityDal.GetCities();
+
+        public string GetCity(int id) => _cityDal.GetCity(id);
     }
 }

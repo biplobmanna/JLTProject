@@ -29,5 +29,7 @@ namespace BAL
                    && numberOfJobSeekerAdded == 1
                 ? 1 : 0;
         }
+
+        public Company GetCompanyDetails(int companyId) => companyDal.GetCompanyDetails(companyId);
     }
 }

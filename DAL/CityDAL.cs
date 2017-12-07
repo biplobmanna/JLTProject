@@ -20,9 +20,6 @@ namespace DAL
         }
         public DataTable GetCities()
         {
-            
-
-
             DataTable table = new DataTable();
             var adapter = new SqlDataAdapter("GetCitiesWithId", _connection);
             try
@@ -33,6 +30,21 @@ namespace DAL
             {
             }
             return table;
+        }
+
+        public string GetCity(int id)
+        {
+            var table = new DataTable();
+            string commandText = "GetCity " + id;
+            var adapter = new SqlDataAdapter(commandText,_connection);
+            try
+            {
+                adapter.Fill(table);
+            }
+            catch(Exception e)
+            {
+            }
+            return table.Rows.Count == 1 ? table.Rows[0][0].ToString() : null;
         }
     }
 }

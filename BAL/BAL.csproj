@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="CityBAL.cs" />
     <Compile Include="CompanyBAL.cs" />
+    <Compile Include="CredentialBAL.cs" />
     <Compile Include="JobCategoryBAL.cs" />
     <Compile Include="JobSeekerBAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

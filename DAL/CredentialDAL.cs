@@ -94,5 +94,22 @@ namespace DAL
             return NextCompanyId;
         }
 
+        public int VerifyLoginCredentials(string username, string password)
+        {
+            var table = new DataTable();
+            string commandText = "GetCredentials " + username + ", " + password;
+            var adapter = new SqlDataAdapter(commandText,_connection);
+            try
+            {
+                adapter.Fill(table);
+            }
+            catch (Exception e)
+            {
+            }
+
+            if (table.Rows.Count != 1) return 0;
+            var credentialId = Convert.ToInt32(table.Rows[0][0]);
+            return credentialId;
+        }
     }
 }

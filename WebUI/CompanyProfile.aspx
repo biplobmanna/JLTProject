@@ -25,7 +25,7 @@
             <div class="row">
                 <h2 style="margin-left: 80px;">Profile Details:</h2>
             </div>
-            <br/><br/>
+            <br/>
            <!--Company Id-->
             <div class="row">
                 <div class="lCell">
@@ -87,6 +87,53 @@
                 </div>
                 <div class="rCell">
                     &nbsp;<asp:Label ID="LabelContactPersonPhone" runat="server" Text=""></asp:Label>
+                </div>
+            </div>
+        </div>
+        <!--View Jobs Section-->
+        <div id="divViewJobs" hidden="hidden">
+            <div class="row">
+                <h2 style="margin-left: 80px;">Jobs Details:</h2>
+            </div>
+            <br/>
+            <div class="row">
+                <asp:GridView ID="GridViewDisplayJobDetails" runat="server" HorizontalAlign="Center" Width="663px">
+                    <HeaderStyle BackColor="#009999" Font-Bold="True" ForeColor="White" />
+                    <RowStyle BackColor="Silver" BorderStyle="Solid" BorderWidth="2px" />
+                </asp:GridView>
+            </div>
+        </div>
+        <!--Add Jobs-->
+        <div id="divAddJobs" hidden="hidden">
+            <div class="row">
+                <h2 style="margin-left: 80px;">Add Jobs:</h2>
+            </div>
+            <br/>
+            <!--Job Name-->
+            <div class="row">
+                <div class="lCell">
+                    Job Name:
+                </div>
+                <div class="rCell">
+                    &nbsp;<asp:TextBox ID="TextBoxJobName" runat="server"></asp:TextBox>
+                </div>
+            </div>
+            <!--Job Category-->
+            <div class="row">
+                <div class="lCell">
+                    Job Category:
+                </div>
+                <div class="rCell">
+                    &nbsp;<asp:DropDownList ID="DropDownListJobCategory" runat="server"></asp:DropDownList>
+                </div>
+            </div>
+            <!--Submit Button-->
+            <div class="row" style="height: 50px;">
+                <div class="lCell">
+                    &nbsp;
+                </div>
+                <div class="rCell">
+                    <asp:Button ID="ButtonSubmit" runat="server" Text="Submit" OnClick="ButtonSubmit_Click"/>
                 </div>
             </div>
         </div>

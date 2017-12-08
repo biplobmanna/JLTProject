@@ -91,6 +91,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -103,7 +104,9 @@
     <Content Include="CompanyProfile.aspx" />
     <Content Include="JobSeekerProfile.aspx" />
     <Content Include="JS\CompanyProfileActions.js" />
+    <Content Include="JS\JobSeekerProfileActions.js" />
     <Content Include="JS\jquery-3.2.1.min.js" />
+    <Content Include="JS\PageViewActions.js" />
     <Content Include="login.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -160,6 +163,12 @@
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{3A71D034-AFBF-4807-86BA-DCA1D7B1BC4B}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

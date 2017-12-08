@@ -48,6 +48,8 @@
     <Compile Include="CompanyDAL.cs" />
     <Compile Include="CredentialDAL.cs" />
     <Compile Include="JobCategoryDAL.cs" />
+    <Compile Include="JobDAL.cs" />
+    <Compile Include="JobsAppliedDAL.cs" />
     <Compile Include="JobSeekerDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

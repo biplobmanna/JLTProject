@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using BO;
 
@@ -46,6 +47,23 @@ namespace DAL
             }
             return numberOfRowsAdded;
         }
+
+        public DataTable GetJobSeekerDetails(int jobSeekerId)
+        {
+            var table=new DataTable();
+            var commandText = "GetJobSeekerDetails " + jobSeekerId;
+            var adapter = new SqlDataAdapter(commandText,_connection);
+            try
+            {
+                adapter.Fill(table);
+            }
+            catch
+            {
+            }
+            return table;
+        }
+
+        
     }
 
 }

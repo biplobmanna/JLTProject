@@ -14,8 +14,8 @@
     <nav id="mainNav">
         <ul class="menuList">
             <li><a class="navLink" href="#">Home</a></li>
-            <li><a class="navLink" href="register">Register</a></li>
-            <li><a class="navLink" href="login">Login</a></li>
+            <li><a class="navLink" href="register.aspx">Register</a></li>
+            <li><a class="navLink" href="login.aspx">Login</a></li>
         </ul>
     </nav>
 
@@ -36,7 +36,7 @@
             <br />
         </p>
         <p>
-            Our Customer Care Executive (<b>CCE</b>) will be available fro help <mark>24x7</mark>
+            Our Customer Care Executive (<b>CCE</b>) will be available for help <mark>24x7</mark>
         </p>
     </section>
 

@@ -17,7 +17,6 @@
         <ul class="menuList">
             <li><a class="navLink" href="index.aspx">Home</a></li>
             <li><a class="navLink" href="register.aspx">Register</a></li>
-            <li><a class="navLink" href="login">Login</a></li>
         </ul>
     </nav>
 
@@ -45,14 +44,16 @@
                 </div>
             </div>
             <div class="row" style="height: 50px;">
-                <div class="lCell">&nbsp;
-                    </div>
+                <div class="lCell">
+                    &nbsp;
+                </div>
                 <div class="rCell">
                     <asp:Button ID="ButtonSubmit" runat="server" Text="Submit" OnClick="ButtonSubmit_Click" />
                 </div>
             </div>
             <div class="row" style="height: 50px;">
-                <div class="lCell">&nbsp;
+                <div class="lCell">
+                    &nbsp;
                 </div>
                 <div class="rCell">
                     <asp:Label ID="LabelLoginMessage" runat="server" ForeColor="Red"></asp:Label>

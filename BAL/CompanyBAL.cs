@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,5 +32,7 @@ namespace BAL
         }
 
         public Company GetCompanyDetails(int companyId) => companyDal.GetCompanyDetails(companyId);
+
+        public DataTable GetJobApplicants(int jobId) => companyDal.GetJobApplicants(jobId);
     }
 }

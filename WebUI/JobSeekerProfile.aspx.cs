@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -17,7 +18,7 @@ namespace WebUI
             if (!Page.IsPostBack)
             {
                 //Creating Session Object
-                Session["UserId"] = 1001;
+                //Session["UserId"] = 1001;
                 //Delete the above portion
 
                 //Populating JS Details
@@ -42,6 +43,11 @@ namespace WebUI
             }
         }
 
+        //protected override void OnLoadComplete(EventArgs e)
+        //{
+        //    ScriptManager.RegisterStartupScript(this.Page,Page.GetType(),"text","showDivViewJobs()",true);
+        //}
+
         private void PopulateGridViewAppliedJobs()
         {
             var jobsAppliedBal = new JobsAppliedBAL();
@@ -59,18 +65,29 @@ namespace WebUI
             );
             GridViewJobs.DataSource = table;
             GridViewJobs.DataBind();
+            LabelHidden.InnerText = "divViewJobs";
         }
 
         protected void ButtonApplyJob_Click(object sender, EventArgs e)
         {
             JobsAppliedBAL jobsAppliedBal = new JobsAppliedBAL();
+            LabelHidden.InnerText = "divViewJobs";
             foreach (GridViewRow row in GridViewJobs.Rows)
             {
                 if (!(row.Cells[0].FindControl("CheckBoxJobSelect") as CheckBox).Checked) continue;
                 var jobId = Convert.ToInt32(row.Cells[1].Text);
                 var jobSeekerId = Convert.ToInt32(Session["UserId"]);
-                if (jobsAppliedBal.isAlreadyAppliedJob(jobId,jobSeekerId))
+                if (jobsAppliedBal.IsAlreadyAppliedJob(jobId, jobSeekerId))
+                {
                     jobsAppliedBal.AddNewJobApplication(jobId, jobSeekerId);
+                    row.ForeColor = Color.White;
+                    row.BackColor = Color.DarkGreen;
+                }
+                else
+                {
+                    row.ForeColor = Color.White;
+                    row.BackColor = Color.DarkRed;
+                }
             }
             PopulateGridViewAppliedJobs();
         }

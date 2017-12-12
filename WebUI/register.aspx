@@ -15,8 +15,7 @@
     <nav id="mainNav">
         <ul class="menuList">
             <li><a class="navLink" href="index.aspx">Home</a></li>
-            <li><a class="navLink" href="register.aspx">Register</a></li>
-            <li><a class="navLink" href="login">Login</a></li>
+            <li><a class="navLink" href="login.aspx">Login</a></li>
         </ul>
     </nav>
 
@@ -101,6 +100,7 @@
                 </div>
                 <div class="rCell">
                     &nbsp;<asp:TextBox ID="TextBoxRePassword" runat="server" TextMode="Password"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorRePassword" runat="server" ErrorMessage="Enter Password!S" ControlToValidate="TextBoxRePassword" ForeColor="Red"></asp:RequiredFieldValidator>
                     <asp:CompareValidator ID="CompareValidatorPassword" runat="server" ErrorMessage="Passwords dont Match!" ControlToCompare="TextBoxPassword" ControlToValidate="TextBoxRePassword" ForeColor="Red"></asp:CompareValidator>
                 </div>
             </div>
@@ -160,7 +160,7 @@
             <!--Contact Person Name-->
             <div class="row">
                 <div class="lCell">
-                    Company Name:
+                    Contact Name:
                 </div>
                 <div class="rCell">
                     &nbsp;<asp:TextBox ID="TextBoxCompanyContactPersonName" runat="server"></asp:TextBox>
@@ -170,7 +170,7 @@
             <!--Contact Person Email-->
             <div class="row">
                 <div class="lCell">
-                    Company Email:
+                    Contact Email:
                 </div>
                 <div class="rCell">
                     &nbsp;<asp:TextBox ID="TextBoxCompanyContactPersonEmail" runat="server"></asp:TextBox>
@@ -181,10 +181,10 @@
             <!--Contact Person Phone-->
             <div class="row">
                 <div class="lCell">
-                    Company Phone:
+                    Contact Phone:
                 </div>
                 <div class="rCell">
-                    &nbsp;<asp:TextBox ID="TextBoxCompanyContactPersonPhone" runat="server"></asp:TextBox>
+                    &nbsp;<asp:TextBox ID="TextBoxCompanyContactPersonPhone" runat="server" Width="110px"></asp:TextBox>
                     <asp:RegularExpressionValidator ID="RegularExpressionValidatorPhone" runat="server" ErrorMessage="Invalid Phone Number!" ForeColor="Red" ValidationExpression="\d{10}" ControlToValidate="TextBoxCompanyContactPersonPhone"></asp:RegularExpressionValidator>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidatorContactPersonPhone" runat="server" ErrorMessage="Phone Number Required!" ForeColor="Red" ControlToValidate="TextBoxCompanyContactPersonPhone"></asp:RequiredFieldValidator>
                 </div>
@@ -206,6 +206,7 @@
                 </div>
                 <div class="rCell">
                     &nbsp;<asp:TextBox ID="TextBoxCompanyRePassword" runat="server" TextMode="Password"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidatorCompanyRePassword" runat="server" ErrorMessage="Enter Password!" ControlToValidate="TextBoxCompanyRePassword" ForeColor="Red"></asp:RequiredFieldValidator>
                     <asp:CompareValidator ID="CompareValidatorCompanyPassword" runat="server" ErrorMessage="Passwords dont match!" ControlToCompare="TextBoxCompanyPassword" ControlToValidate="TextBoxCompanyRePassword" ForeColor="Red"></asp:CompareValidator>
                 </div>
             </div>
@@ -220,14 +221,6 @@
             </div>
         </div>
     </form>
-
-
-    <footer>
-        <h3>Address:</h3>
-        <address>
-            Supreme Business Park, Hiranandani Gardens, Powai, Mumbai
-        </address>
-    </footer>
 </body>
 
 </html>

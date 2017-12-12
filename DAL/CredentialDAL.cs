@@ -111,5 +111,32 @@ namespace DAL
             var credentialId = Convert.ToInt32(table.Rows[0][0]);
             return credentialId;
         }
+
+        public int IsUsernamePresent(string username)
+        {
+            var numberOfRowsFetched = 0;
+            _command = new SqlCommand
+            {
+                CommandText = "IsUserNamePresent",
+                CommandType = CommandType.StoredProcedure
+            };
+            _command.Parameters.AddWithValue("@UserName", username);
+
+            try
+            {
+                _connection.Open();
+                _command.Connection = _connection;
+                numberOfRowsFetched = Convert.ToInt32(_command.ExecuteScalar());
+            }
+            catch (SqlException se)
+            {
+            }
+            finally
+            {
+                _connection.Close();
+            }
+            return numberOfRowsFetched;
+
+        }
     }
 }

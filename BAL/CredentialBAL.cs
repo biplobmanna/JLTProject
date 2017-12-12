@@ -18,5 +18,7 @@ namespace BAL
 
         public int VerifyCredentials(string username, string password) =>
             _credentialDal.VerifyLoginCredentials(username, password);
+
+        public bool IsCredentialPresent(string username) => 1 == _credentialDal.IsUsernamePresent(username);
     }
 }

@@ -18,15 +18,18 @@
             <li id="ListItemHome"><a class="navLink">Home</a></li>
             <li id="ListItemViewJobs"><a class="navLink">View Jobs</a></li>
             <li id="ListItemAddJobs"><a class="navLink">Add Jobs</a></li>
+            <li><a class="navLink" href="index.aspx">Logout</a></li>
         </ul>
     </nav>
     <form id="form1" runat="server">
+        <label id="LabelHidden" runat="server" hidden="hidden"></label>
+        <!--Div Home-->
         <div id="divHome">
             <div class="row">
                 <h2 style="margin-left: 80px;">Profile Details:</h2>
             </div>
-            <br/>
-           <!--Company Id-->
+            <br />
+            <!--Company Id-->
             <div class="row">
                 <div class="lCell">
                     CompanyId:
@@ -91,24 +94,23 @@
             </div>
         </div>
         <!--View Jobs Section-->
-        <div id="divViewJobs" hidden="hidden">
+        <div id="divViewJobs">
             <div class="row">
                 <h2 style="margin-left: 80px;">Jobs Details:</h2>
             </div>
-            <br/>
             <div class="row">
-                <asp:GridView ID="GridViewDisplayJobDetails" runat="server" HorizontalAlign="Center" Width="663px">
-                    <HeaderStyle BackColor="#009999" Font-Bold="True" ForeColor="White" />
-                    <RowStyle BackColor="Silver" BorderStyle="Solid" BorderWidth="2px" />
+                <asp:GridView ID="GridViewDisplayJobDetails" runat="server" Width="663px" OnSelectedIndexChanged="GridViewDisplayJobDetails_SelectedIndexChanged" AutoGenerateSelectButton="True">
+                    <AlternatingRowStyle BackColor="#99CCFF" />
+                    <HeaderStyle BackColor="#009999" Font-Bold="True" ForeColor="White" Font-Size="20px" />
                 </asp:GridView>
             </div>
         </div>
         <!--Add Jobs-->
-        <div id="divAddJobs" hidden="hidden">
+        <div id="divAddJobs">
             <div class="row">
                 <h2 style="margin-left: 80px;">Add Jobs:</h2>
             </div>
-            <br/>
+            <br />
             <!--Job Name-->
             <div class="row">
                 <div class="lCell">
@@ -133,8 +135,23 @@
                     &nbsp;
                 </div>
                 <div class="rCell">
-                    <asp:Button ID="ButtonSubmit" runat="server" Text="Submit" OnClick="ButtonSubmit_Click"/>
+                    <asp:Button ID="ButtonSubmit" runat="server" Text="Submit" OnClick="ButtonSubmit_Click" />
                 </div>
+            </div>
+        </div>
+
+        <!--Show People who applied for Jobs-->
+        <div id="divJobApplicants">
+            <div class="row">
+                <h2 style="margin-left: 80px;">
+                    <label id="LabelJobApplicantsHeader" runat="server"></label>
+                </h2>
+            </div>
+            <div class="row">
+                <asp:GridView ID="GridViewJobApplicants" runat="server" Width="666px">
+                    <AlternatingRowStyle BackColor="#99CCFF" />
+                    <HeaderStyle BackColor="#009999" Font-Size="20px" ForeColor="White" />
+                </asp:GridView>
             </div>
         </div>
     </form>

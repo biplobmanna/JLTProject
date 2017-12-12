@@ -21,7 +21,7 @@ namespace BAL
         public bool AddNewJobApplication(int jobId, int jobSeekerId) =>
             1 == _jobsAppliedDal.AddNewJobApplication(jobId, jobSeekerId);
 
-        public bool isAlreadyAppliedJob(int jobId, int jobSeekerId) =>
+        public bool IsAlreadyAppliedJob(int jobId, int jobSeekerId) =>
             0 == _jobsAppliedDal.JobAlreadyApplied(jobId, jobSeekerId);
 
         public DataTable FetchAllAppliedJobsDetails(int jobSeekerId) =>

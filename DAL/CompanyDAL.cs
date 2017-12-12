@@ -77,5 +77,20 @@ namespace DAL
 
             return companyDetails;
         }
+
+        public DataTable GetJobApplicants(int jobId)
+        {
+            var table = new DataTable();
+            var commandText = "GetJobApplicants " + jobId;
+            var adapter = new SqlDataAdapter(commandText,_connection);
+            try
+            {
+                adapter.Fill(table);
+            }
+            catch
+            {
+            }
+            return table;
+        }
     }
 }

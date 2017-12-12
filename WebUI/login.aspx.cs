@@ -25,6 +25,11 @@ namespace WebUI
                 LabelLoginMessage.Text = "Login Successful: "+credentialId;
                 SetSessionObject(credentialId);
                 //To-Do: Redirect it to the respectieve profile page
+                if(credentialId.ToString().StartsWith("1"))
+                    Response.Redirect("JobSeekerProfile.aspx");
+                else
+                    Response.Redirect("CompanyProfile.aspx");
+                    Response.Redirect("CompanyProfile.aspx");
             }
             else
             {

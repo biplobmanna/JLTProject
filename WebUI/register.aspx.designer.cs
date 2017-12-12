@@ -130,6 +130,15 @@ namespace WebUI {
         protected global::System.Web.UI.WebControls.TextBox TextBoxRePassword;
         
         /// <summary>
+        /// RequiredFieldValidatorRePassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorRePassword;
+        
+        /// <summary>
         /// CompareValidatorPassword control.
         /// </summary>
         /// <remarks>
@@ -317,6 +326,15 @@ namespace WebUI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxCompanyRePassword;
+        
+        /// <summary>
+        /// RequiredFieldValidatorCompanyRePassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorCompanyRePassword;
         
         /// <summary>
         /// CompareValidatorCompanyPassword control.

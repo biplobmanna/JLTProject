@@ -8,7 +8,7 @@
     <link href="CSS/layoutStyle.css" rel="stylesheet" />
     <link href="CSS/RegisterLayout.css" rel="stylesheet" />
     <script src="JS/jquery-3.2.1.min.js"></script>
-    <script src="JS/PageViewActions.js"></script>
+
 </head>
 <body>
     <header>
@@ -19,6 +19,7 @@
             <li id="ListItemHome"><a class="navLink">Home</a></li>
             <li id="ListItemViewJobs"><a class="navLink">View Jobs</a></li>
             <li id="ListItemAppliedJobs"><a class="navLink">Applied Jobs</a></li>
+            <li><a class="navLink" href="index.aspx">Logout</a></li>
         </ul>
     </nav>
     <form id="form1" runat="server">
@@ -28,6 +29,9 @@
                 <h2 style="margin-left: 80px;">Profile Details:</h2>
             </div>
             <br />
+
+            <label id="LabelHidden" runat="server" hidden="hidden"></label>
+
             <!--JobSeeker Id-->
             <div class="row">
                 <div class="lCell">
@@ -99,6 +103,7 @@
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
+                    <HeaderStyle BackColor="#009999" Font-Bold="True" Font-Size="20px" ForeColor="White" />
                 </asp:GridView>
             </div>
         </div>
@@ -108,8 +113,11 @@
                 <h2 style="margin-left: 80px;">Applied Jobs:</h2>
             </div>
             <br />
-            <div class="row">
-                <asp:GridView ID="GridViewAppliedJobs" runat="server"></asp:GridView>
+            <div class="row" style="margin-left: 80px;">
+                <asp:GridView ID="GridViewAppliedJobs" runat="server" Width="419px">
+                    <AlternatingRowStyle BackColor="#99CCFF" />
+                    <HeaderStyle BackColor="#009999" Font-Bold="True" Font-Size="20px" ForeColor="White" />
+                </asp:GridView>
             </div>
         </div>
     </form>

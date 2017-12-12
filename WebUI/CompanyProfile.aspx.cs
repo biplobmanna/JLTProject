@@ -18,7 +18,7 @@ namespace WebUI
             if (!Page.IsPostBack)
             {
                 //TO-DO: Setting the session object which will be later removed
-                Session["UserId"] = 2002;
+                //Session["UserId"] = 2002;
                 // Remove the above portion
                 var companyBal = new CompanyBAL();
                 var company = companyBal.GetCompanyDetails(Convert.ToInt32(Session["UserId"]));
@@ -33,6 +33,7 @@ namespace WebUI
 
                 //Populating Job Details View Page
                 PopulateGridViewDisplayJobDetails(Convert.ToInt32(Session["UserId"]));
+                GridViewDisplayJobDetails.SelectedIndexChanged += GridViewDisplayJobDetails_SelectedIndexChanged;
 
                 //Populating Jobs Added Page
                 PopulateDropDownListJobCategory();
@@ -61,15 +62,47 @@ namespace WebUI
         protected void ButtonSubmit_Click(object sender, EventArgs e)
         {
             var jobBal = new JobBAL();
-            if(
+            if (
                 jobBal.AddJobs(
-                TextBoxJobName.Text,
-                Convert.ToInt32(Session["UserId"]),
-                Convert.ToInt32(DropDownListJobCategory.SelectedValue)
+                    TextBoxJobName.Text,
+                    Convert.ToInt32(Session["UserId"]),
+                    Convert.ToInt32(DropDownListJobCategory.SelectedValue)
                 )
             )
-                MessageBox.Show("Added successfully!");
-            PopulateGridViewDisplayJobDetails(Convert.ToInt32(Session["UserId"]));
+            {
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "text", "alert('Added Successfully!');",
+                    true);
+                PopulateGridViewDisplayJobDetails(Convert.ToInt32(Session["UserId"]));
+                LabelHidden.InnerText = "divViewJobs";
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "text", "alert('Added Successfully!');", true);
+                LabelHidden.InnerText = "divAddJobs";
+            }
+        }
+
+        protected void GridViewDisplayJobDetails_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Display The Jobs applied here
+            //ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "text", "alert('Index Changed!');",
+            //    true);
+            var jobId = Convert.ToInt32(GridViewDisplayJobDetails.SelectedRow.Cells[1].Text.Trim());
+            CompanyBAL companyBal = new CompanyBAL();
+            var table = companyBal.GetJobApplicants(jobId);
+            if (table.Rows.Count > 0)
+            {
+                GridViewJobApplicants.DataSource = table;
+                GridViewJobApplicants.DataBind();
+                LabelJobApplicantsHeader.InnerText = ""+jobId+":"+
+                                                     GridViewDisplayJobDetails.SelectedRow.Cells[3].Text.Trim()+" - Job Applicants";
+                LabelHidden.InnerText = "divJobApplicants";
+            }
+            else
+            {
+                LabelHidden.InnerText = "divViewJobs";
+            }
+            
             
         }
     }

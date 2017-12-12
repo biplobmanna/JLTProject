@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -36,6 +37,13 @@ namespace WebUI
 
         protected void ButtonSubmit_Click(object sender, EventArgs e)
         {
+            if (new CredentialBAL().IsCredentialPresent(TextBoxUsername.Text))
+            {
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "text", "alert('Username taken!');", true);
+                TextBoxUsername.BorderColor = Color.Red;
+                return;
+            }
+
             JobSeeker jobSeeker = new JobSeeker();
             jobSeeker.JobSeekerName = TextBoxName.Text;
             jobSeeker.JobSeekerDetails = TextBoxDetails.Text;
@@ -53,6 +61,8 @@ namespace WebUI
             jobSeekerBal.SaveJobSeeker(jobSeeker, credential);
 
             //TO-DO: Check for the validity of username from the Credentials DB
+            //ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "text", "alert('Registered Successfully! Please Login.');", true);
+            Response.Redirect("login.aspx");
         }
 
         protected void DropDownListCategory_SelectedIndexChanged(object sender, EventArgs e)
@@ -71,21 +81,34 @@ namespace WebUI
 
         protected void ButtonSubmitCompany_Click(object sender, EventArgs e)
         {
-            Company company = new Company();
-            company.CompanyName = TextBoxCompanyName.Text;
-            company.Address = TextBoxAddressCompany.Text;
-            company.ContactPersonName = TextBoxCompanyContactPersonName.Text;
-            company.ContactPersonEmail = TextBoxCompanyContactPersonEmail.Text;
-            company.ContactPersonPhone = TextBoxCompanyContactPersonPhone.Text;
-            company.CityId = Convert.ToInt32(DropDownListCompanyCity.SelectedValue);
+            if (new CredentialBAL().IsCredentialPresent(TextBoxUsernameCompany.Text))
+            {
+                ScriptManager.RegisterStartupScript(this.Page,Page.GetType(),"text","alert('Username taken!');",true);
+                TextBoxUsernameCompany.BorderColor = Color.Red;
+                return;
+            }
 
-            Credential credential = new Credential();
-            credential.UserName = TextBoxUsernameCompany.Text;
-            credential.Password = TextBoxCompanyPassword.Text;
+            Credential credential = new Credential
+            {
+                UserName = TextBoxUsernameCompany.Text,
+                Password = TextBoxCompanyPassword.Text
+            };
+            Company company = new Company
+            {
+                CompanyName = TextBoxCompanyName.Text,
+                Address = TextBoxAddressCompany.Text,
+                ContactPersonName = TextBoxCompanyContactPersonName.Text,
+                ContactPersonEmail = TextBoxCompanyContactPersonEmail.Text,
+                ContactPersonPhone = TextBoxCompanyContactPersonPhone.Text,
+                CityId = Convert.ToInt32(DropDownListCompanyCity.SelectedValue)
+            };
+
 
             CompanyBAL companyBal = new CompanyBAL();
             companyBal.SaveCompany(company, credential);
             //TO-DO: Check for the validity of username from the Credentials DB
+            //ScriptManager.RegisterStartupScript(this.Page,Page.GetType(),"text","alert('Registered Successfully! Please Login.');",true);
+            Response.Redirect("login.aspx");
         }
     }
 }
